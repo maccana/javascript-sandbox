@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+	body {
+		margin:0 auto;
+		width:100%;
+		font-family: helvetica, sans-serif;
+	}
+	#pSpan {
+		margin-left:20px;
+		background-color: orange;
+		padding: 10px;
+	}
+
+</style>
+
+
 
 </head>
+<!--setNumbering function sets incremtal numbering for paragraphs on page load-->
+<body onload="setNumbering();">
 
-<body id="main">
+	<div id="main">
+		<p>Paragraph <span id='pSpan'></span></p>
+		<p>Paragraph <span id='pSpan'></span></p>
+		<p>Paragraph <span id='pSpan'></span></p>
+		<p>Paragraph <span id='pSpan'></span></p>
+		<p>Paragraph <span id='pSpan'></span></p>
+
+		<div>
+			<button id="" onclick="removeNode()">Remove Paragraph</button>
+		</div>
+	</div><!-- main -->
+
+
 	<script>
+		// stores each span element to insert sequential numbers later
+		var num = document.getElementsByTagName('span');
+		// stores each p element in the body in list variable
+		var list = document.getElementsByTagName('p');
+
 		function removeNode() {
-
-
-			var list = document.getElementsByTagName('p');
+			// sets node var to first element in list array
 			var node = list.item(0);
+
 			node.parentNode.removeChild(node);
+			setNumbering();
+		}
+
+		// sets p numbering onload and 
+		// when paragraph is removed 
+		function setNumbering() {
+
+			// for 
+			for (var i = 0; i<num.length; i++) {
+				//alert(num.length);
+				console.log(i);
+				var currSpan  =  num[i];
+				currSpan.innerHTML = i+1;
+			}
 		}
 	</script>
 </body>
-	<p>Paragraph 1</p>
-	<p>Paragraph 2</p>
-	<p>Paragraph 3</p>
-	<p>Paragraph 4</p>
-	<p>Paragraph 5</p>
-	<button onclick="removeNode()">Remove Paragraph</button>
 </html>
