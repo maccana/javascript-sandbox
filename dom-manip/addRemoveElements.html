@@ -18,28 +18,50 @@
 		margin-top:100px;
 		border: 0px solid red;
 		text-align: left;
+		border: 2px solid #dedede;
+		padding: 30px;
 	}
 	p {
-		margin-bottom: 20px;
+		margin-bottom: 25px;
+	
+	}
+	p,button {
+		margin-left: 30px;
+	}
+	pre {
+		font-size: 16px;
+	}
+	#section-header {
+		background-color:#eee;
+		padding:10px; 
+		margin-bottom: 35px;
 	}
 </style>
-
-
-
 </head>
 <!--setNumbering function sets incremtal numbering for paragraphs on page load-->
 <body onload="setNumbering();">
 
 	<div id="main">
-		<p>Paragraph <span id='pSpan'></span></p>
-		<p>Paragraph <span id='pSpan'></span></p>
-		<p>Paragraph <span id='pSpan'></span></p>
-		<p>Paragraph <span id='pSpan'></span></p>
-		<p>Paragraph <span id='pSpan'></span></p>
 
-		<div>
-			<button id="" onclick="removeNode()">Remove Paragraph</button>
-		</div>
+	
+		<section>
+			<header id="section-header">
+				<pre>Javascript example for removing DOM nodes and re-numbering elements</pre>
+				<hr>
+			</header>
+	
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+
+			<div>
+				<button id="" onclick="removeNode()">Remove Paragraph</button>
+			</div>
+
+		</section>
+
 	</div><!-- main -->
 
 
