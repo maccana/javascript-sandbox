@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body id="main">
+	<script>
+		function removeNode() {
+
+
+			var list = document.getElementsByTagName('p');
+			var node = list.item(0);
+			node.parentNode.removeChild(node);
+		}
+	</script>
+</body>
+	<p>Paragraph 1</p>
+	<p>Paragraph 2</p>
+	<p>Paragraph 3</p>
+	<p>Paragraph 4</p>
+	<p>Paragraph 5</p>
+	<button onclick="removeNode()">Remove Paragraph</button>
+</html>
