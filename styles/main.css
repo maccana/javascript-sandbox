@@ -1,0 +1,16 @@
+body {
+	margin:0 auto;
+	width:100%;
+	background-color: #eee;
+	font-family: helvetica;
+}
+#wrapper {
+	width:80%;
+	background-color: #fff;
+	margin:50px auto;
+	padding:20px;
+}
+#box {width: 150px;border: 1px solid black;margin-top: 20px;padding: 3px;background-color: rgb(195,215,235);}
+div {margin-bottom: 3px;}
+span{border:1px solid silver;padding-left:4px; padding-right: 4px;}
+#geo-button{margin-top: 12px;margin-left: 60px;}
