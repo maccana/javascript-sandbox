@@ -1,0 +1,45 @@
+body {
+	margin:0 auto;
+	width:100%;
+	background-color: #eee;
+	font-family: helvetica;
+}
+#wrapper {
+	width:80%;
+	background-color: transparent;
+	margin:50px auto;
+	padding:20px;
+	clear:both;
+}
+
+#main-left{
+	margin:auto;
+	background-color: ;
+	border: 0px solid red;
+	clear:both;
+}
+#box {width: 150px;border: 1px solid black;margin-top: 20px;padding: 3px;background-color: rgb(195,215,235);}
+div {margin-bottom: 3px;}
+span{border:1px solid silver;padding-left:4px; padding-right: 4px;}
+#geo-button{margin-top: 12px;margin-left: 60px;}
+
+#leftbox {
+	border: 3px solid #ddd;
+	width:250px;
+	height:280px;
+	float:left;
+	margin:5px;
+	padding:10px;
+}
+#rightbox {
+	border: 3px solid green;
+	width:250px;
+	height:280px;
+	float:left;
+	margin:5px;
+	padding: 10px;
+
+
+	
+}
+

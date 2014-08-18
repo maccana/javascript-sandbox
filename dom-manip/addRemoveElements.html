@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	body {
+		margin:0 auto;
+		width:100%;
+		font-family: helvetica, sans-serif;
+	}
+	#pSpan {
+		margin-left:20px;
+		background-color: orange;
+		padding: 5px;
+	}
+	#main {
+		width:70%;
+		margin:auto;
+		margin-top:100px;
+		border: 0px solid red;
+		text-align: left;
+		border: 2px solid #dedede;
+		padding: 30px;
+	}
+	p {
+		margin-bottom: 25px;
+	
+	}
+	p,button {
+		margin-left: 30px;
+	}
+	pre {
+		font-size: 16px;
+	}
+	#section-header {
+		background-color:#eee;
+		padding:10px; 
+		margin-bottom: 35px;
+	}
+</style>
+</head>
+<!--setNumbering function sets incremtal numbering for paragraphs on page load-->
+<body onload="setNumbering();">
+
+	<div id="main">
+
+	
+		<section>
+			<header id="section-header">
+				<pre>Javascript example for removing DOM nodes and re-numbering elements</pre>
+				<hr>
+			</header>
+	
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+			<p>Paragraph <span id='pSpan'></span></p>
+
+			<div>
+				<button id="" onclick="removeNode()">Remove Paragraph</button>
+			</div>
+
+		</section>
+
+	</div><!-- main -->
+
+
+	<script>
+		// stores each span element to insert sequential numbers later
+		var num = document.getElementsByTagName('span');
+		// stores each p element in the body in list variable
+		var list = document.getElementsByTagName('p');
+
+		function removeNode() {
+			// sets node var to first element in list array
+			var node = list.item(0);
+
+			node.parentNode.removeChild(node);
+			setNumbering();
+		}
+
+		// sets p numbering onload and 
+		// when paragraph is removed 
+		function setNumbering() {
+
+			// for 
+			for (var i = 0; i<num.length; i++) {
+				//alert(num.length);
+				console.log(i);
+				var currSpan  =  num[i];
+				currSpan.innerHTML = i+1;
+			}
+		}
+	</script>
+</body>
+</html>

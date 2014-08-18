@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Functions</title>
+</head>
+<body id="main">
+	<script>
+		var main = document.getElementById('main');
+		var log = [];
+		log.push('<pre>');
+		// Declare function can be called before the function 
+		log.push( declaration() );
+		// Declarative function syntax
+		function declaration() {
+		  return "declaration";
+		}
+
+		// Expression function syntax
+		var expression = function() {
+		  return "expression";
+		}
+		// Expression function can only be called after it has been created
+		log.push( expression() );
+
+		// Assigning an anonymous function as value of an object property
+		var myobject = {
+		  property: function() {
+		    return "property";
+		  }
+		}
+		// Calling property function using dot notation syntax on the object literal
+		log.push( myobject.property() );
+
+		log.push('</pre>');
+		// Joining all log entry together and assigining to main HTML element - 
+		// <br> passed to join method puts each entry in the log array on a new line
+		main.innerHTML = log.join('<br>');
+	</script>
+</body>
+</html>
