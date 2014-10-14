@@ -1,5 +1,13 @@
 /* Styles for iterate.html - 16 Stepster */
 
+/*
+TODO:
+Fix the responsive issue with not being able to apply % values to borders!
+This is another potential blog post topic / tut.
+http://stackoverflow.com/questions/13474754/how-to-set-borders-thickness-in-percentages
+
+*/
+
 body {background-color: rgba(93, 166, 163, 0.94);}
 .page {
 	width: 78.36990595611285%; /* 1000 / 1276 */
@@ -15,6 +23,9 @@ h2 {
 	color:rgb(29, 81, 57);
 	text-transform: uppercase;
 }
+button{margin-bottom: 20px;};
+
+#cycle {width: 20px;max-height:20px;}
 
 #boxes {
 	/* width: 96.19238476953907%;  960 / 998 */
