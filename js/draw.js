@@ -1,4 +1,8 @@
+// Beginning Building Web Applications in the Cloud starter draw to screen app - p.31
+// Non DRY optomised version of JS - see draw-dry.js for more details
+
 window.onload = function() {
+
 	document.ontouchmove = function(e) { e.preventDefault(); } 
 
 	var canvas = document.getElementById('main');
@@ -44,15 +48,16 @@ window.onload = function() {
 	}
 
 	
-canvas.ontouchmove = function(event){ event.preventDefault();
-var newx = event.touches[0].clientX;
-var newy = event.touches[0].clientY - canvastop;
-line(lastx,lasty, newx,newy);
-lastx = newx;
-lasty = newy; 
-}
+	canvas.ontouchmove = function(event){ event.preventDefault();
+		var newx = event.touches[0].clientX;
+		var newy = event.touches[0].clientY - canvastop;
+		line(lastx,lasty, newx,newy);
+		lastx = newx;
+		lasty = newy; 
+	}
 
 	var clearButton =  document.getElementById('clear');
+
 	clearButton.onclick = clear;
 
 	clear();
