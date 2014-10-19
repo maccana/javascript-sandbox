@@ -1,14 +1,13 @@
-function storage() {
-	alert("storage");
-	var key = "key";
-	var value = document.getElementById("in").value;
-	sessionStorage.setItem(key, value);
-	document.getElementById("out").innerHTML = 
-	sessionStorage.getItem("key");
-	var value = document.getElementById("in").innerHTML = "";
-}
+/* Functions for storage1.html examples of local storage API */
 
-function storage2() {
-	 document.getElementById("out").innerHTML =
-	 sessionStorage.getItem("key");
+function storage() {
+	console.log("Storage function called...");
+	var key = "Name";
+	var value = document.getElementById("text-input").value;
+	sessionStorage.setItem(key, value);
+	console.log("Local storage successful!");
+	console.log(key + ': ' + value);
+	document.getElementById("output").innerHTML = 
+	sessionStorage.getItem("key");
+	var value = document.getElementById("text-input").innerHTML = "";
 }
