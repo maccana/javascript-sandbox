@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-</head>
+<head></head>
 
 <body id="main">
 	<script>
@@ -10,7 +8,7 @@
 		var log = ['<pre>'];
 
 		function waitForSomething( callback ) {
-		  callback('called')
+		  callback('Callback called')
 		}
 
 		waitForSomething( function( someText ) {
@@ -20,5 +18,40 @@
 		log.push('</pre>')
 		main.innerHTML = log.join('<br>')
 	</script>
+
+	<button id="displayInDiv" onclick="">In Div</button>
+	<button id="displayInAlert">Alert</button>
+	<div id="divNotice"></div>
 </body>
+
+<script>
+		var displayDiv = function(op) {
+			var div = document.getElementById("divNotice");
+			div.innerHTML=  op + " Message";
+		}
+
+		var displayAlert = function(op) {
+			alert(op + " Demonstrates alert fed by callback!");
+		}
+
+		var aBtn = document.getElementById("displayInAlert");
+			aBtn.addEventListener("click", function() {
+				console.log("alert callback working!");
+				output('Output: ', displayAlert )
+			}, false);
+
+		var dBtn = document.getElementById("displayInDiv");
+			dBtn.addEventListener("click", function() {
+			console.log("Great a div callback");
+			output('Output: ', displayDiv )
+
+		}, false);
+
+		// Single output function used with callback op function 
+		// Callback chooses either displayDiv or displayAlert 
+		function output(op, display) {
+			console.log("Hi from the output function!");
+			display(op);
+		}
+</script>
 </html>
