@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Remove DOM nodes</title>
+	<script>
+		function test() {
+			//Nodelist
+			var list = document.getElementsByTagName('p');
+			var node = list.item(0);
+			node.parentNode.removeChild(node);
+		}
+	</script>
+</head>
+<body>
+	<p>Element One</p>
+	<p>Element Two</p>
+	<p>Element Three</p>
+	<p>Element Four</p>
+	<p>Element Five</p>
+
+	<input type="Button" onclick="test()" value="Check me out!">
+	
+</body>
+</html>
