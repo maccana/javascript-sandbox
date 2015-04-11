@@ -4,14 +4,15 @@
 console.log("We're ready to create a new cat :D");
 
 // Closure 
-function buildCat(){
-	var catName = 'Orson';
-	var catColor = 'Grey and White';
+function buildCat(catName, catColor){
+console.log(catName + " is the name and " + catColor + " is the color");
+	var catName = catName;
+	var catColor = catColor;
 
 	function catFact() {
 		console.log(catName + " is the new cat's name");
 		console.log(catColor + " is the new cat's color");
-		alert("Hello " + catName);
+		alert("Hello " +catName);
 
 
 	}
@@ -20,7 +21,7 @@ function buildCat(){
 // Button to access the function and member variables inside the closure
 document.getElementById('cat').onclick = function() {
 
-	var newCat = buildCat();
+	var newCat = buildCat("Orson","Grey");
 	newCat();
 	alert('Cat created successfully!');
 	// Fire him off to the DB here!
