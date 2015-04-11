@@ -8,6 +8,6 @@ function storage() {
 	console.log("Local storage successful!");
 	console.log(key + ': ' + value);
 	document.getElementById("output").innerHTML = 
-	sessionStorage.getItem("key");
+	sessionStorage.getItem(key);
 	var value = document.getElementById("text-input").innerHTML = "";
 }
