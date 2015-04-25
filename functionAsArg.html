@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Passing function as argument</title>
+
+</head>
+
+<body onload="">
+	<div id="container"></div>
+</body>
+
+	<script type="text/javascript">
+
+		// function takes two numbers and callback function
+		var add = function(first, second, cb ) {
+			var result = first + second;
+			cb(result);
+		}
+		
+		// function to be passed as third param to add function
+		var calcFinished = function(result){
+			// set timeout simulates processing delay - not for real app
+			setTimeout(function() {
+				console.log('Result: ' + result);
+				console.log("Finished!");
+				document.getElementById("result").innerHTML = 'Result: ' + result;
+				 
+			}, 3000);
+			console.log("Please wait for calculation to complete...");
+			var showResult = document.createElement("h3");
+			showResult.setAttribute("id", "result" );
+			document.getElementById("container").appendChild(showResult);
+			showResult.innerHTML = 'Please wait for calculation to complete...';
+		}
+		
+		// calling add function with calcFinished passed as callback
+		add(3,9, calcFinished);
+		
+	</script>
+		
+</html>
