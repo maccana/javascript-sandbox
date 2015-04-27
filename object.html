@@ -38,7 +38,7 @@
 		Animal.prototype.setName = function(newName)
 		{
 			if (typeof newName != 'undefined') {
-				this.owner = newName;
+				this.name = newName;
 				
 			} else {
 				document.write("Please create a valid name");
@@ -49,9 +49,9 @@
 		}
 		
 		// sound
-		Animal.prototype.setSound = function(newOwner)
+		Animal.prototype.setSound = function(newSound)
 		{
-			if (typeof newOwner != 'undefined') {
+			if (typeof newSound != 'undefined') {
 				this.sound = newSound;
 				
 			} else {
@@ -61,6 +61,17 @@
 		Animal.prototype.getSound = function() {
 			return this.sound;
 		}
+		
+		// create new animal object
+		var dog = new Animal();
+		// set properties of new animal
+		dog.setName("Ross");
+		dog.setOwner("Jim");
+		dog.setSound();
+		
+		document.write(dog.getName() 	+ "<br/>");
+		document.write(dog.getOwner() + "<br/>");
+		document.write(dog.getSound() + "<br/>");
 		
 		
 	</script>
