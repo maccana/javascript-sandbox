@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Object Oriented Javscript</title>
+
+</head>
+
+<body onload="">
+	<div id="container"></div>
+</body>
+
+	<script type="text/javascript">
+
+		// animal object constructor
+		function Animal() {
+			this.name = "No Name";
+			this.sound = "Grrrr";
+			this.owner = "No Owner";	
+		}
+		// animal object methods
+		
+		// owner
+		Animal.prototype.setOwner = function(newOwner)
+		{
+			if (typeof newOwner != 'undefined') {
+				this.owner = newOwner;
+				
+			} else {
+				document.write("Please create a valid owner");
+			}
+		}
+		Animal.prototype.getOwner = function() {
+			return this.owner;
+		}
+		
+		// name
+		Animal.prototype.setName = function(newName)
+		{
+			if (typeof newName != 'undefined') {
+				this.owner = newName;
+				
+			} else {
+				document.write("Please create a valid name");
+			}
+		}
+		Animal.prototype.getName = function() {
+			return this.name;
+		}
+		
+		// sound
+		Animal.prototype.setSound = function(newOwner)
+		{
+			if (typeof newOwner != 'undefined') {
+				this.sound = newSound;
+				
+			} else {
+				document.write("Please create a valid sound");
+			}
+		}
+		Animal.prototype.getSound = function() {
+			return this.sound;
+		}
+		
+		
+	</script>
+		
+</html>
