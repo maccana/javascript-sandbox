@@ -24,17 +24,20 @@
 			setTimeout(function() {
 				console.log('Result: ' + result);
 				console.log("Finished!");
-				document.getElementById("result").innerHTML = 'Result: ' + result;
-				 
+				// Re-set the display to show result of calculation
+				document.getElementById("result").innerHTML = 'Result: ' + result; 
 			}, 3000);
+			
+			// set up elements to display while calculationg is processed
 			console.log("Please wait for calculation to complete...");
 			var showResult = document.createElement("h3");
+			// set id for css and getById inside setTimeout function
 			showResult.setAttribute("id", "result" );
 			document.getElementById("container").appendChild(showResult);
 			showResult.innerHTML = 'Please wait for calculation to complete...';
 		}
 		
-		// calling add function with calcFinished passed as callback
+		// call add function with calcFinished passed as callback
 		add(3,9, calcFinished);
 		
 	</script>
