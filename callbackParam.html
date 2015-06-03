@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Callback as parameter to function</title>
+
+</head>
+
+<body>
+	<div id="container">See console for function output</div>
+</body>
+
+<script type="text/javascript">
+
+var allUserData = [];
+
+function logStuff (userData) {
+    if ( typeof userData === "string")
+    {
+        console.log(userData);
+    }
+    else if ( typeof userData === "object")
+    {
+        for (var item in userData) {
+            console.log(item + ": " + userData[item]);
+        }
+    }
+}
+function getInput (options, callback) {
+	allUserData.push (options);
+	callback (options);
+}
+
+getInput ({name:"Jane", speciality:"JavaScript", age:"30"},  logStuff);
+
+</script>
+		
+</html>
