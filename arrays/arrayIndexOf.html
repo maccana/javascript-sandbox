@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the position of "Alison" in the sonngs array:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var songs = ["Ana", "Velouria", "Alison", "Cecilia"];
+    var a = songs.indexOf("Alison");
+    document.getElementById("demo").innerHTML = '"Alison" is located at index ' +  a;
+}
+</script>
+
+<p><b>Note:</b> The indexOf method was introduced in JavaScript 1.6, and does not work in Internet Explorer 8 and earlier versions.</p>
+
+</body>
+</html>
