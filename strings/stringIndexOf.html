@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>indexOf String</title>
+</head>
+<body>
+	<p>This example finds the index of "Jeremy" in the string below.
+	This code results in a message box containing the number 26, which is the character position of the second "Jeremy". This is because the indexOf() function is case sensitive and name passed to it is uppercase. Therefor the inital lowercase "jeremy" is ignored by the function.</p>
+	<p id="testString">Hello jeremy. How are you Jeremy?</p>
+</body>
+
+<script>
+var myString = document.getElementById('testString').innerHTML;
+var foundAtPosition = myString.indexOf("Jeremy");
+alert("Jeremy found at position " + foundAtPosition);
+</script>
+
+</html>
+
+
