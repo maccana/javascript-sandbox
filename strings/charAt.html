@@ -5,6 +5,11 @@
 -->
 <script>
 	var myString = prompt("Enter some text", "Hello World!");
+	// returns the last character in the string
 	var theLastChar = myString.charAt(myString.length - 1);
+	// returns corresponding Unicode value of the character
+	var theFirstCharCode = myString.charCodeAt(0);
+
+	document.write("The first character code is " + theFirstCharCode +"<br>");
 	document.write("The last character is " + theLastChar);	
 </script>
