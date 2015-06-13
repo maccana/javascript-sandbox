@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Using trim method on user input</title>
+</head>
+<body>
+	<p>When working with user input, it is not guaranteed that the user will input data exactly how you want them to. Therefore, it’s always best to assume user input is incorrect, and therefore make it correct.</p>
+
+	<p>This code prompts users to enter their name. Any whitespace is then trimmed from the input and use the resulting value in a greeting that is displayed in an alert box. So, if the user entered " Joe", he’d still only see "Hello, Joe" in the alert box because the input has been trimmed using the trim() method prior to display.</p>
+</body>
+<script>
+	var name = prompt("Please enter your name");
+	name = name.trim();
+	alert("Hello, " + name);
+</script>
+</html>
+
