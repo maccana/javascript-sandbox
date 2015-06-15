@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Concat and Joing Methods</title>
+</head>
+<body>
+	<p>Simple example of Javascript's built in concat() and join() methods. The list below is built by concatenating two separate arrays before creating a string from the resulting combined array. The join() is passed a "&ltbr/&gt"
+	element to place each array item on a new line.</p>
+	
+</body>
+<script>
+	var coreMembers = [ "Regine", "Jeremy", "Win", "Will", "Richard", "Tim" ];
+	var auxMembers = [ "Sarah", "Owen", "Colin" ];
+
+	var allMembers = coreMembers.concat(auxMembers);
+	var memberString = allMembers.join("<br />");
+
+	document.write(memberString);
+</script>
+</html>
