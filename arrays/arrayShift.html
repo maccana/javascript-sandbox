@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JavaScript array pop example</title>
+</head>
+<body onload="init()">
+
+<h2>Extract first item of an array</h2>
+<button id="shift-item">Extract first Item</button>
+<p id="original-array">Current Items: </p>
+<p id="results"></p>
+</body>
+
+<script type="text/javascript">
+function init(){
+	var items = ["guitar", "banjo", "tambourine", "bongos"];
+	var n = items.join(" / ");
+	console.log(n);
+	var p = document.getElementById("original-array");
+	p.innerHTML = p.innerHTML + n;
+	//console.log(p);
+
+	document.getElementById("shift-item").onclick=function(){
+		var newArray = items.shift();
+
+		var results = document.getElementById("results");
+		results.innerHTML = "The new array contains: " + newArray.toString();
+		n = items.join(" / ");
+		p.innerHTML = "Current Items: " + n;
+	};
+	
+};
+
+</script>
+
+</html>
