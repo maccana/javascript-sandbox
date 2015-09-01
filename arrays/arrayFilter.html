@@ -28,6 +28,7 @@ var even = arr.filter(function(val) {
 console.log("Odd: " + odd);
 console.log("Even: " + even);
 
+// Filtering instrument object array by type
 var instruments = [
 	{name:'guitar', 		type:'stringed'},
 	{name:'tambourine', type:'percussion'},
@@ -38,12 +39,13 @@ var instruments = [
 	{name:'bongo', 			type:'percussion'},
 	
 ];
-
+// Save all brass to new array 
 var brass = instruments.filter(function(inst){
 	return inst.type === "brass";
 });
+// Iterate the brass array and print details to console
 brass.forEach(function(inst){
-	console.log(inst.name)
+	console.log("Instrument Name: " + inst.name + " " + "Type: " + inst.type);
 });
 
 
