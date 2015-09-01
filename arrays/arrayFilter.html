@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,7 @@
 
 <body>
 	<div id="container">
-        <p>The filter function returns array containing only the remaining values after filter condition has been applied. See console for function output</p>
+  <p>The filter function returns array containing only the remaining values after filter condition has been applied. See console for function output.</p>
        
 </div>
 </body>
@@ -28,6 +27,25 @@ var even = arr.filter(function(val) {
 
 console.log("Odd: " + odd);
 console.log("Even: " + even);
+
+var instruments = [
+	{name:'guitar', 		type:'stringed'},
+	{name:'tambourine', type:'percussion'},
+	{name:'violin', 		type:'stringed'},
+	{name:'flute', 			type:'wind'},
+	{name:'trumpet', 		type:'brass'},
+	{name:'saxophone', 	type:'brass'},
+	{name:'bongo', 			type:'percussion'},
+	
+];
+
+var brass = instruments.filter(function(inst){
+	return inst.type === "brass";
+});
+brass.forEach(function(inst){
+	console.log(inst.name)
+});
+
 
 
 </script>
