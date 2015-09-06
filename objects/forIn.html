@@ -14,10 +14,14 @@
 <script>
  // Create a new school object with 3 own properties: schoolName, schoolAccredited, and schoolLocation.​
  var school = {schoolName:"MIT", schoolAccredited: true, schoolLocation:"Massachusetts"};
+
  // Use of the for/in loop to access properties in shcool object
+ /* NOTE: Properties inherited from Object.prototype are not enumerable, so the for/in 
+ loop does not show them */
  for(var eachItem in school) {
  	console.log(eachItem); // Prints schoolName, schoolAccredited, schoolLocation
  }
+
 </script>
  </html>
 
