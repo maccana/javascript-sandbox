@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Object Oriented Javscript</title>
+	<style type="text/css" media="screen">
+	*{margin:auto;padding:0px;}
+	body{background-color:#fff;font-family:helvetica;}
+	#page-wrapper{border:0px solid red;background-color:#eee; height:100vh;}
+	.container{width:960px;margin:auto;background:#fff;padding:5px;text-align:center;height:100%;}
+	#content{margin-top:50px;}
+	</style>
+</head>
+<body>
+	<div id="page-wrapper">
+		<div class="container">
+			<div id="content">
+				<h2>Creating objects containing properties and methods with object constructor</h2>
+				<p>See console.</p>
+			</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript">
+
+		// Instrument constructor function
+		function Instrument (theCategory, thePrice, theBrand, theModel, theColorsAvailable) {
+				// Base instrument properties
+		    this.category = theCategory;
+		    this.price = thePrice;
+		    this.brandName = theBrand;
+		    this.modelName = theModel;
+				this.colorsAvailable = theColorsAvailable;
+				// Get model name method
+		    this.showModel = function () {
+		        console.log("Model: " + this.modelName);
+		    }
+				// Get all colors for model method
+		    this.colors = function () {
+					console.log("Colors Available for", this.modelName);
+					console.log("---------------------------------------")
+			    this.colorsAvailable.forEach(function (eachColor)  {
+			       console.log(eachColor)
+					});
+		    }
+		}
+		// Create new instrument
+		var lesPaulInstrument = new Instrument ("Electric Guitar", 2499, "Gibson","Les Paul Standard", 
+			["Midnight Black", "Cherry Red", "Classic Gold Top"]);
+			console.log("Category: ", lesPaulInstrument.category, "/", "Brand: ", lesPaulInstrument.brandName);	
+			
+		// Call methods on instrument object
+		lesPaulInstrument.showModel();	
+		lesPaulInstrument.colors();
+		// Log out price property to console
+		console.log("---------------------------------------")
+		console.log("Price: $",lesPaulInstrument.price);
+		
+	</script>
+		
+</html>

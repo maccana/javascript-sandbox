@@ -3,12 +3,54 @@
 	<head>
 		<!--  Reverse String -->
 		<script type="text/javascript">
+		
+		// Reverse a string
 		function reverseString(str){
 		// reverse a string - challenge in freecodecamp javascript module
 			console.log("Input String: ",str);
 		  return str.split("").reverse().join(""); // return result of processed string with chained methods
 		}
 		console.log("Output String: ",reverseString('hello, this string is reversed'));
+		
+		// Check if a string is a palindrome and output result to console
+		function palindrome(str) {
+			var orig = str.toLowerCase();
+			nStr = str.toLowerCase();
+			var nStr = nStr.replace(/[?\s\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,"");	
+			
+		  var reverse = nStr.split("").reverse().join("");
+			console.log("String done ", reverse);
+			
+		  if(reverse === nStr){
+				console.log(orig, "is a palindrome :)");
+		    return true;
+		  } else {
+		  	console.log(orig, " is not a palindrome :(");
+				return false;
+		  }
+  
+		}
+	
+		// console.log(palindrome("eye"));
+		// console.log(palindrome("rAce car"));
+		// console.log(palindrome("MirRor"));
+		// console.log(palindrome("never odd or even"));
+		
+		//
+			// Sort strings in array form longest to shortest or vice versa
+			function findLongestWord(str) {
+				var nArr = str.replace(/[^A-Za-z\s]/g, " ").split(" ");;
+				nArr.sort(function(a,b){
+					return b.length - a.length; // ASC -> a - b; DESC -> b - a
+				});
+              
+			  return nArr[0] + " is the longest word with " +nArr[0].length + " letters.";
+			}
+
+			console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+
+			console.log(findLongestWord('The Funk Brothers was the nickname of Detroit-based session musicians who performed the backing to most Motown recordings from 1959 until the company moved to Los Angeles in 1972.'));
+		
 		</script>	
 	<head>
 	<body>
