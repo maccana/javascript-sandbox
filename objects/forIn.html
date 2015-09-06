@@ -1,27 +1,44 @@
- <!DOCTYPE html>
- <html>
- <head>
-     <meta charset="utf-8" />
-     <meta http-equiv="X-UA-Compatible" content="IE=edge"
-     <title>Accessing and Enumerating Properties on Objects</title>
-     <meta name="description" content="">	
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge"
+ <title>Accessing and Enumerating Properties on Objects</title>
+ <meta name="description" content="">	
 
- </head>
- <body>
- 	<p>See console.</p>
- </body>
+</head>
+<body>
+	<p>See console.</p>
+</body>
 
 <script>
- // Create a new school object with 3 own properties: schoolName, schoolAccredited, and schoolLocation.​
- var school = {schoolName:"MIT", schoolAccredited: true, schoolLocation:"Massachusetts"};
+// Create a new school object with 3 own properties: schoolName, schoolAccredited, and schoolLocation.​
+var school1 = {schoolName:"MIT", schoolAccredited: true, schoolLocation:"Massachusetts"};
 
- // Use of the for/in loop to access properties in shcool object
- /* NOTE: Properties inherited from Object.prototype are not enumerable, so the for/in 
- loop does not show them */
- for(var eachItem in school) {
- 	console.log(eachItem); // Prints schoolName, schoolAccredited, schoolLocation
- }
+// Use of the for/in loop to access properties in shcool object
+/* NOTE: Properties inherited from Object.prototype are not enumerable, so the for/in 
+loop does not show them */
+for(var eachItem in school1) {
+	console.log("School1 properties: ", eachItem); // Prints schoolName, schoolAccredited, schoolLocation
+}
+console.log("----------------------------------------------------------------------------");
+
+// Accessing Inherited Properties
+function HigherLearning(){
+	this.educationLevel = "University"; /* Without 'this' educationLevel does not show up  
+										as inherited property in school2 eachItem for loop */ 
+}
+
+var school2 = new HigherLearning();
+
+school2.schoolName = "MIT";
+school2.schoolAccredited = true;
+school2.schoolLocation = "Massachusetts";
+
+for(var eachItem in school2){
+	console.log("School2 properties: " , eachItem); // Prints own and inherited properties
+}
 
 </script>
- </html>
+</html>
 
