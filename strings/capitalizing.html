@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Capitalize First Letter Each Word</title>
+</head>
+<body>
+<script>
+/*-----------------------------------------------------------------------------------------------*/
+/* Bonfire - Capitalize first letter of each word in a string */
+  function titleCase(str) {
+  	var str = str.toLowerCase();
+  	console.log("Lower Cased -", str);
+  	return str.replace(/\w\S*/g, 
+  		function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  	}
+  console.log("First letters of each word capitalised -",titleCase("I'm a little tea pot"));
+</script>
+</body>
+</html>
