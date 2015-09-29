@@ -14,7 +14,7 @@ $('.js-geolocation').click(function() {
       loadWeather(position.coords.latitude + ',' + position.coords.longitude);
     });
   } else {
-    $(".error").append('<p>Sorry you\'re browser is not compatible.</p>');
+    $(".error").append('<p>Sorry your browser is not compatible.</p>');
     loadWeather("Dublin", "");
   }
 });
@@ -27,7 +27,7 @@ function loadWeather(location, woeid) {
     success: function(weather) {
       console.log(weather);
       city = weather.city,
-        tempVal = weather.temp;
+      tempVal = weather.temp;
       temp = weather.temp + '&deg;';
       wcode =
         '<img class="weathericon" src="https://dl.dropboxusercontent.com/u/16631776/images/weathericons/' +
@@ -52,8 +52,8 @@ $('.unit').click(function() {
   if ($('.celsius').hasClass("selected")) {
     $('.farenheit').addClass("selected");
     $('.celsius').removeClass("selected");
-    var unit = (tempToInt * 9 / 5) + 32 + '&deg';
-    $(".temperature").html(unit);
+    var celsiusToFarenheit = (tempToInt * 9 / 5) + 32 + '&deg';
+    $(".temperature").html(celsiusToFarenheit);
   } else {
     $('.farenheit').removeClass("selected");
     $('.celsius').addClass("selected");
