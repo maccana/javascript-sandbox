@@ -3,19 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+	</script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-	see console
+	<div class="container">
+		<h1>Higher Order Function Example</h1>
+		<h2 id="test"></h2>
+	</div>
 </body>
 <script>
 (function(){
-
 function greaterThan(n){
-	return function(x) { return x > n; }
+	return function(x) { 
+		$("#test").append("Is ", x + " greater than " + n + "?<br>")
+		//document.write( );
+		return x > n; }
 }
 
 var greaterThan10 = greaterThan(10);
-console.log("Result:", greaterThan10(11));
+		$(".container").append("Result: ", greaterThan10(11));
 	
 })();
 </script>
