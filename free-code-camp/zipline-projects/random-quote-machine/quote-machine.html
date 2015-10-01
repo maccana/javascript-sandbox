@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="utf-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge"
-   <title></title>
-   <meta name="description" content="">	
-	 <link rel="stylesheet" 
-	 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" media="screen">
-</head>
-<style type="text/css" media="screen">
-  body {
-      background-image: url(http://previews.123rf.com/images/Krisdog/Krisdog1212/Krisdog121200066/17048941-A-repeating-seamless-gadgets-and-technology-background-tile-texture-with-lots-of-different-tech-and--Stock-Vector.jpg);
-   
-  }
-  .jumbotron { background-color: #fff; }
-  #top-btn {
-    margin-top:20px;
-    margin-left:0
-  }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">  
+  <title>Random Quote Machine</title>
 
-  #content-wrap {
-    width:88%;
-    margin:36px auto
-  }
-
-  #btn-container {
-    border:0 solid red;
-    min-height:65px;
-    text-align:center
-  }  
-  #quote { color:#457786; }
-  #phrase { 
-    padding: 10px;
-    background-color: rgba(203, 243, 243, 0.78);
-
-    border-radius: 10px;
-  }
-  #phrase small { color:#0B3F43; }
-</style>
-  
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  <script src="quote.js"></script>
+  <link rel="stylesheet" 
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="style.css">
+</head>  
 <body>
   <div class="container-fluid">
     <div class="container" id="content-wrap">
@@ -55,65 +30,25 @@
         </div>
 
         <div class="text-center" id="phrase">
-          <h2 id="quote" class="text-center"></h2>
-          <h4 id="author" class="text-center">- </h4>
-          
-          <div id="tweetBtn" class="container text-center">
-            <a href="https://twitter.com/intent/tweet?button_hashtag=mikemacana" class="twitter-share-button" data-size="large" data-url="" data-text=""></a>
-          </div>
-      </div>
-  
+          <h2 class="text-center" id="quote"></h2>
 
+          <h4 class="text-center" id="author">-</h4>
+
+          <div class="container text-center" id="tweetBtn">
+            <a class="twitter-share-button" data-size="large" data-text=""
+            data-url="" href=
+            "https://twitter.com/intent/tweet?button_hashtag=mikemacana"></a>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-md-12" id="btn-container">
-            <button class="btn btn-lg btn-success" id="top-btn">Get new quote</button><br>
+            <button class="btn btn-lg btn-success" id="top-btn">Get new
+            quote</button><br>
           </div>
         </div>
       </div>
     </div>
   </div>
- 	<!-- jQuery -->
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-      function getQuote(){
-        $.ajax({
-          type: "POST",
-          url: 'http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en',
-          success: function(quote){
-            $('#quote').empty().append(quote.quoteText);
-            $('#author').empty().append("- ",quote.quoteAuthor);
-
-            console.log("Reset tweet data...", quote.quoteText);
-            
-            // Remove existing iframe
-            $('#tweetBtn iframe').remove();
-            // Generate new markup for tweet button widget
-            var tweetBtn = $('<a></a>')
-                  .addClass('twitter-share-button')
-                  .attr('href', 'http://twitter.com/share')
-                  .attr('data-url', 'www.freecodecamp.com')
-                  .attr('data-text', $('#quote').text() + $('#author').text());
-              $('#tweetBtn').append(tweetBtn);
-              twttr.widgets.load();
-          }
-			  });
-      }  
-      // Handler for button to get new quote
-      $('#top-btn').on('click', function(ev) {
-        ev.preventDefault();
-        console.log("go get the quote...");
-        // Call to get quote and append to the relevant DOM elements
-        getQuote();
-      });
-
-
-      getQuote();
-    });
-	</script>
-
 </body>
 </html>
