@@ -1,0 +1,35 @@
+body { background-color: #f7f7f7; }
+
+.jumbotron {
+  background-color: #fff
+}
+
+#top-btn {
+  margin-top: 20px;
+  margin-left: 0
+}
+
+#content-wrap {
+  width: 88%;
+  margin: 36px auto
+}
+
+#btn-container {
+  border: 0 solid red;
+  min-height: 65px;
+  text-align: center
+}
+
+#quote {
+  color: #457786
+}
+
+#phrase {
+  padding: 10px;
+  background-color: rgba(198, 206, 206, 0.78);
+  border-radius: 10px
+}
+
+#phrase small {
+  color: #0B3F43
+}
