@@ -8,7 +8,7 @@ function storage() {
 	console.log("Local storage successful!");
 	console.log(key + ': ' + value);
 	document.getElementById("output").innerHTML = 
-	sessionStorage.getItem(key) + " Stored in Session";
+	sessionStorage.getItem(key) + " has been stored in Session";
 	document.getElementById("text-input").value = "";
 }
 function deleteFromSessionStorage() {
