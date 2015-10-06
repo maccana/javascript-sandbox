@@ -1,7 +1,7 @@
 body {
 	margin:0 auto;
 	width:100%;
-	background-color: #eee;
+	background-color: #f7f7f7;
 	font-family: helvetica;
 }
 #wrapper {
@@ -18,11 +18,32 @@ body {
 	border: 0px solid red;
 	clear:both;
 }
-#box {width: 150px;border: 1px solid black;margin-top: 20px;padding: 3px;background-color: rgb(195,215,235);}
-div {margin-bottom: 3px;}
-span{border:1px solid silver;padding-left:4px; padding-right: 4px;}
-div {margin-bottom: 3px;}
-#geo-button{margin-top: 12px;margin-left: 60px;}
+#box {
+	width:80%;
+	padding: 8px;
+
+	background-color: transparent;
+	border: 1px solid rgb(164, 183, 230);
+	color:#525252;
+	border-radius: 5px;
+	font-size: 18px;
+}
+.success { color:#565656; }
+#output { color: purple;	line-height: 22px; }
+
+div {
+	margin-bottom: 3px;
+}
+span{
+
+}
+div {
+	margin-bottom: 3px;
+}
+#geo-button{
+	margin-top: 12px;
+	margin-left: 60px;
+}
 
 #leftbox {
 	border: 3px solid #ddd;
@@ -39,8 +60,5 @@ div {margin-bottom: 3px;}
 	float:left;
 	margin:5px;
 	padding: 10px;
-
-
-	
 }
 

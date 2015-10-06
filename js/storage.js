@@ -8,11 +8,16 @@ function storage() {
 	console.log("Local storage successful!");
 	console.log(key + ': ' + value);
 	document.getElementById("output").innerHTML = 
-	sessionStorage.getItem(key) + " Stored in Session";
+	sessionStorage.getItem(key) + "<span class='success'>" + " has been successfully stored in this browser Session" +"</span>";
+	var box = document.getElementById("box");
+	box.style.display = "block";
+
 	document.getElementById("text-input").value = "";
 }
 function deleteFromSessionStorage() {
-	console.log("Name: " + sessionStorage.getItem("Name"));	
+	console.log("Name: " + sessionStorage.getItem("Name"));
+	var value = sessionStorage.getItem("Name");	
 	sessionStorage.removeItem("Name");
 	document.getElementById("output").innerHTML = "";
+	document.getElementById("output").innerHTML = value + "<span class='success'>" + " has been successfully removed from Session" +"</span>";
 }
