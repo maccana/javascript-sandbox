@@ -1,7 +1,7 @@
 /* Simple dynamic jquery gallery example */
 $(document).ready(function() {
   // Boolean to switch auto loop on / off
-  var auto = true;
+  var auto = false;
 
   // Images array
   var imageName = [
@@ -33,6 +33,16 @@ $(document).ready(function() {
   clickaway(); 
   
   $("#picture").click(clickaway);
+
+  $('#loop-checked').change(function(){
+    if(auto = true){
+          console.log("checked");
+      auto = false;
+    }
+    else {
+      auto = true;
+    }
+  });
 
   // Resize images 
   var max_size = 250;
