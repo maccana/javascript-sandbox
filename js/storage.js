@@ -8,10 +8,14 @@ function storage() {
 	console.log("Local storage successful!");
 	console.log(key + ': ' + value);
 	document.getElementById("output").innerHTML = 
+<<<<<<< HEAD
 	sessionStorage.getItem(key) + "<span class='success'>" + " has been successfully stored in this browser Session" +"</span>";
 	var box = document.getElementById("box");
 	box.style.display = "block";
 
+=======
+	sessionStorage.getItem(key) + " has been stored in Session";
+>>>>>>> 9227bdf349b6d1b48feef0abc2cabcb7c4eef6af
 	document.getElementById("text-input").value = "";
 }
 function deleteFromSessionStorage() {
