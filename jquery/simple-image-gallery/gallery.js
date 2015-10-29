@@ -15,6 +15,7 @@ $(document).ready(function() {
   // Main function for changing images
   var clickaway = function go() {
   	console.log("cnt", counter);
+    console.log("auto = ", auto);
     $("#picture").fadeOut(300, function() {
       $("#picture").attr("src", imageName[counter]);
       $("#image-caption").text(imageTitle[counter]);
@@ -34,18 +35,21 @@ $(document).ready(function() {
   
   $("#picture").click(clickaway);
 
-  $('#loop-checked').change(function(){
-    if(auto = true){
-          console.log("checked");
+  $('#loop').click(function(){
+    if(auto === true){
+      console.log("checked");
       auto = false;
+      clickaway();
     }
     else {
       auto = true;
+      console.log("inside check", auto);
+      clickaway();
     }
   });
 
   // Resize images 
-  var max_size = 250;
+  var max_size = 450;
   $("img").each(function(i) {
     if ($(this).height() > $(this).width()) {
       var h = max_size;

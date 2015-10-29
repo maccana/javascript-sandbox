@@ -1,4 +1,26 @@
-#picture {
+#picture 
+{
 	cursor: pointer;
 	box-shadow: 0 0 3px black;
+	margin:1% auto 1%;
+}
+
+.center-content 
+{
+	text-align: center;	
+}
+.fa-gallery-controls 
+{
+	padding:1.2%;
+	width: 42%;
+	margin: auto;
+	overflow: hidden;
+	background-color: #fff transparent;
+	text-align: center;
+}
+.fa-gallery-controls i 
+{
+	font-size: 1.9em;
+	margin:0px 10px 0px 10px; 
+	color:#525252;
 }
