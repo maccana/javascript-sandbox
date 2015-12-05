@@ -1,5 +1,5 @@
 	// classes and objects
-	var instance1 = new exampleClass (),
+	var 	instance1 = new exampleClass (),
 		instance2 = new exampleClass ();
 
 	function exampleClass () {
