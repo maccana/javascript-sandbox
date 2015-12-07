@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>jQuery Image Gallery</title>
-	<!-- jquery & friends -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-	<script src="gallery.js"></script>
-	<!-- Stylesheets -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
-	<!-- Font Awesome CDN -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <title>jQuery Image Gallery</title><!-- jquery & friends -->
+
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js">
+  </script>
+  <script src="gallery.js">
+  </script><!-- Stylesheets -->
+  <link href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel=
+  "stylesheet">
+  <link href="style.css" rel="stylesheet"><!-- Font Awesome CDN -->
+  <link href=
+  "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+  rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-		<div class="row center-content">
-			<h1 class="text-primary">Dynamic jQuery Image Gallery</h1>
-			<hr>
-			<label for="checkbox">Loop Images</label>
-			<input type="checkbox" id="loop-checked">
-			<div class="gallery-wrap">
-				<h2 id="image-caption" class="text-muted">Apples</h2>
-				<img src="http://images.forbes.com/media/2009/07/07/healthiest-food_apples.jpg" id="picture" alt="">
-
-							<div class="fa-gallery-controls center-content">
-								<i class="fa fa-backward"></i>
-								<i class="fa fa-play" id="loop"></i>
-								<i class="fa fa-forward"></i>
-							</div>
-			</div>
-		</div>
-	</div>	
+  <div class="container">
+    <div class="row center-content">
+      <h1 class="text-primary">Dynamic jQuery Image Gallery</h1>
+      <hr>
+      <label for="checkbox">Loop Images</label> <input id="loop-checked" type=
+      "checkbox">
+      <div class="gallery-wrap">
+        <h2 class="text-muted" id="image-caption">Apples</h2><img alt="" id=
+        "picture" src=
+        "http://images.forbes.com/media/2009/07/07/healthiest-food_apples.jpg">
+        <div class="fa-gallery-controls center-content">
+          <i class="fa fa-backward"></i> <i class="fa fa-play" id="loop"></i>
+          <i class="fa fa-forward"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
