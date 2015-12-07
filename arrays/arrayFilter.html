@@ -1,67 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>Using Array.filter method</title>
-<style type="text/css" media="screen">
-input { width: 20%; }
-</style>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-type">
+  <title>Using Array.filter method</title>
+  <style media="screen" type="text/css">
+  	input { width: 20%; }
+  </style>
 </head>
-
 <body>
-	<div id="container">
-  <p>The filter function returns array containing only the remaining values after filter condition 
-		has been applied. See console for function output.</p>
-	<label>Instrument Type: </label>
-	<input type="text" name="some_name" value="" id="type-input" placeholder="Input an instrument type to filter by"><br><br>
-	<button type="submit" id="type-submit">Filter Instruments</button>
-</div>
-</body>
-
+  <div id="container">
+    <p>The filter function returns array containing only the remaining values
+    after filter condition has been applied. See console for function
+    output.</p><label>Instrument Type:</label> <input id="type-input" name=
+    "some_name" placeholder="Input an instrument type to filter by" type="text"
+    value=""><br>
+    <br>
+    <button id="type-submit" type="submit">Filter Instruments</button>
+  </div>
 <script type="text/javascript">
+// Instantiate numbers array
+var arr = [1, 2, 3, 4, 5];
+var odd = arr.filter(function(val) {
+  return 0 != val % 2;
+});
+// odd = [1, 3, 5]
+var even = arr.filter(function(val) {
+  return 0 == val % 2;
+});
+// even = [2, 4]
+console.log("Odd: " + odd);
+console.log("Even: " + even);
 
-	var arr = [1, 2, 3, 4, 5];
-	var odd = arr.filter(function(val) {
-	    return 0 != val % 2;
-	});
-	// odd = [1, 3, 5]
-	var even = arr.filter(function(val) {
-	    return 0 == val % 2;
-	});
-	// even = [2, 4]
+// Filtering instrument object array by type
+var instruments = [{
+  name: 'guitar',
+  type: 'stringed'
+}, {
+  name: 'tambourine',
+  type: 'percussion'
+}, {
+  name: 'violin',
+  type: 'stringed'
+}, {
+  name: 'flute',
+  type: 'wind'
+}, {
+  name: 'trumpet',
+  type: 'brass'
+}, {
+  name: 'saxophone',
+  type: 'brass'
+}, {
+  name: 'bongo',
+  type: 'percussion'
+}, ];
 
-	console.log("Odd: " + odd);
-	console.log("Even: " + even);
-
-	// Filtering instrument object array by type
-	var instruments = [
-		{name:'guitar', 		type:'stringed'},
-		{name:'tambourine', type:'percussion'},
-		{name:'violin', 		type:'stringed'},
-		{name:'flute', 			type:'wind'},
-		{name:'trumpet', 		type:'brass'},
-		{name:'saxophone', 	type:'brass'},
-		{name:'bongo', 			type:'percussion'},
-	
-	];
-
-		document.getElementById('type-submit').onclick = function(){
-			var type = document.getElementById('type-input').value;
-			if(!type){
-				alert("Please enter an instrument type");
-			}
-			// Save all brass to new array 
-			var selection = instruments.filter(function(inst){
-				// Place whatever filtering is required here
-				return inst.type === type;
-			});
-			// Iterate the brass array and print details to console
-			selection.forEach(function(inst){
-				console.log("Instrument Name:",inst.name," ","Type:", inst.type);
-		});
-	
-	}
-
-</script>
-		
+document.getElementById('type-submit').onclick = function() {
+  var type = document.getElementById('type-input').value;
+  if (!type) {
+    alert("Please enter a valid instrument type");
+  }
+  // Save all brass to new array using higher order function filter
+  var selection = instruments.filter(function(inst) {
+    // Place whatever filtering is required here
+    return inst.type === type;
+  });
+  // Iterate the brass array and print details to console
+  selection.forEach(function(inst) {
+    console.log("Instrument Name:", inst.name, " ", "Type:", inst.type);
+  });
+}
+</script>  
+</body>
 </html>
