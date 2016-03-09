@@ -1,5 +1,6 @@
+html5pic = document.getElementById("html5pic");
+
 function doFirst() {
-	html5pic = document.getElementById("html5pic");
 	html5pic.addEventListener("dragstart", startDrag, false);
 
 	leftbox = document.getElementById("leftbox");
@@ -10,16 +11,17 @@ function doFirst() {
 
 }
 function startDrag(e) {
-	var code = '<img src="image/html5_logo.png" id="html5pic" width="50%">'
+	var code = '<img src="image/html5_logo.png" id="html5pic_transfered" width="50%">'
 	e.dataTransfer.setData('Text', code);
 
 }
 function dropped(e) {
-	console.log("hello");
+	console.log("Item dropped on dropzone.");
+	console.log("Event Data", e.dataTransfer.files);
 	e.preventDefault();
 	leftbox.innerHTML = e.dataTransfer.getData('Text');
+	// Rmove original image element from DOM by it's id
+	html5pic.parentNode.removeChild(html5pic);
 }
 
 window.addEventListener("load", doFirst, false);
-
-
