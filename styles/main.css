@@ -44,21 +44,3 @@ div {
 	margin-top: 12px;
 	margin-left: 60px;
 }
-
-#leftbox {
-	border: 3px solid #ddd;
-	width:250px;
-	height:280px;
-	float:left;
-	margin:5px;
-	padding:10px;
-}
-#rightbox {
-	border: 3px solid green;
-	width:250px;
-	height:280px;
-	float:left;
-	margin:5px;
-	padding: 10px;
-}
-
