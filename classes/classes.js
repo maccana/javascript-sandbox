@@ -1,43 +1,37 @@
-	// classes and objects
-	var 	instance1 = new exampleClass (),
-		instance2 = new exampleClass ();
+	// Example creating object instances from class function
+	var instance1 = new exampleClass(),
+	var instance2 = new exampleClass();
 
-	function exampleClass () {
-		this.property1 = 5;
-		this.property2 = "JS Class Example";
-		this.method1 = function method1 (arg1) {
-			return arg1+" "+this.property2;
+	function exampleClass() {
+		this.property1 	= 5;
+		this.property2 	= "JS Class Example";
+		this.method1 	= function method1(arg1) {
+			return arg1+ " " + this.property2;
 		}
 	}
-	// var instance1 = new exampleClass (),
-	// 	instance2 = new exampleClass ();
-
+	
 	var user1 = {
 		firstname: "Brian",
 		lastname: "Wilson", 
 		age: 65,
 		instrument: "Piano",
-		getName: function () {	return	this.firstname + " " + this.lastname;}
+		getName: function() { return this.firstname + " " + this.lastname; }
 	}
 
 	// Reusable function to create a new User object
 	function User(firstname, lastname, instrument, age) {
-		
-			this.firstname 	= 	firstname,
-			this.lastname 	=  	lastname,
-			this.instrument = 	instrument,
-			this.age 		=	age,
-			this.getName 	=	function () {return firstname + " " + lastname;}
-		
+		this.firstname 	= firstname,
+		this.lastname 	= lastname,
+		this.instrument = instrument,
+		this.age 	= age,
+		this.getName 	= function() { return firstname + " " + lastname; }
 	}
 
 	// Create new object instances 
 	var user2 = new User("Carlos", " Wilson", "Drums", "60");
 	var user3 = new User("Denis", " Wilson", "Keys", "57");
 
-
-	// Output
-
+	// Output to DOM
 	//alert(instance1.method1("Hello"));
 	document.write("<p>exampleClass instance2 Property2 value = " + instance2.property1 + "</p><hr />");
 	// User1 display
