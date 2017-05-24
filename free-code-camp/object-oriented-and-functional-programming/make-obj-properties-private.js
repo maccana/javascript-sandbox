@@ -15,8 +15,7 @@ var Car = function() {
   this.getSpeed = function() {
     return speed;
   };
-
-  
+ 
 };
 
 // Bike constructor
