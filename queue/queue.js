@@ -10,17 +10,29 @@ function Queue(arr) {
 
     // Private var to store the array for the queue
     var items = arr ? arr : [];
-    console.log("items ", items);
+    //console.log("items ", items);
+    var cnt = 0;
 
     /**  Queue Methods **/
     // enqueue adds a new item(s) to the back of the queue
     this.enqueue = function(element){
-       items.push(element);
+      
+      if(element) {
+        items.push(element); 
+        cnt++;
+        console.log('The ' + cnt + ' element passed was a', element);
+        this.print();
+      } 
+      else {
+        console.log('No element passed');
+      }
+       
     };
 
     // dequeque removes the first item in the queue and also returns it
     this.dequeue = function(){
        return items.shift(); // Note the use of shift method and not pop
+       this.print();
     };
 
     // front returns the first item in the queue - whatever is at the front of the queue
@@ -40,21 +52,35 @@ function Queue(arr) {
     }
 
     // print method will display the array to the console for inspection
-    this.print = function(message){
-       console.log(message + items.toString());
+    this.print = function(){
+        console.log('Current Animal List :: ', items.toString());         
     };
 
 
 }
 
 // Test the Queue Class
-var testQueue = new Queue(['rabbit', 'dog', 'pelican', 'cat']);
+var q1 = new Queue(['rabbit', 'dog', 'pelican', 'cat']);
 
 var q2 = new Queue(); // This will be initialised with an empty items array
 
-testQueue.enqueue()
-testQueue.print('testQueue after first enqueue ');
-testQueue.enqueue('monkey'); // -> ['rabbit', 'dog', 'pelican', 'cat', 'monkey']
-testQueue.print();
-testQueue.dequeue(); // -> ['dog', 'pelican', 'cat', 'monkey']
-testQueue.print();
+
+// Test passing no element to enqueue
+q1.enqueue();
+
+q1.enqueue('monkey'); // -> ['rabbit', 'dog', 'pelican', 'cat', 'monkey']
+//q1.print('testQueue after first enqueue ');
+
+q1.dequeue(); // -> ['dog', 'pelican', 'cat', 'monkey']
+//q1.print('Message from the Pet Centre ');
+
+q1.dequeue(); // -> ['dog', 'pelican', 'cat'];
+//q1.print();
+
+q1.enqueue('parrot');
+q1.enqueue('goldfish');
+
+q1.dequeue();
+//q1.print();
+
+
