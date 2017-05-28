@@ -4,19 +4,18 @@
 	<head>
 			<title> String examples</title>		
 			<script language="JavaScript" type="text/javascript">
-			 var txt="Hello world!";
-       document.write("The text " + txt + " is " + txt.length + " chars long" + "<br/>");
+			 	var txt="Hello world!";
+       		 	document.writeln("The text " + txt + " is " + txt.length + " chars long" + "<br>");
        
-       document.write("The text " + txt + " converted to uppercase " + txt.toUpperCase() + "<br/>");         
-			 var txt1 = "To be or not to be that is the question";
-			 document.write("The text " + txt1 + "<br/>");
-			 var stringarr = txt1.split(" ");
-			 for (i=0;i<stringarr.length;i++)
-        {
-          document.write(stringarr[i] + "<br/>");
-        }
-        var postext = txt1.indexOf('is');
-        document.write("The text \'is\' appears in position " + postext + "<br/>");
+      		 	document.writeln("The text " + txt + " converted to uppercase " + txt.toUpperCase() + "<br>");         
+			 	var txt1 = "To be or not to be that is the question";
+			 	document.writeln("The text " + txt1 + "<br>");
+			 	var stringarr = txt1.split(" ");
+			 	for (i=0;i<stringarr.length;i++) {
+					document.writeln(stringarr[i] + "<br>");
+			 	}
+        		var postext = txt1.indexOf('is');
+        		document.writeln("The text \'is\' appears in position " + postext + "<br>");
 			</script>
 	</head>
 	<body>		
