@@ -31,19 +31,19 @@
 
     <script>
        window.onload = function(e) {
-           var cat1 = document.getElementById('cat1');
-           var cat2 = document.getElementById('cat2');
+        var cat1 = document.getElementById('cat1');
+        var cat2 = document.getElementById('cat2');
+        // Get ref to all elements with class
+        var catcards = document.querySelectorAll('.catcard');
+        
+        // Get cat details
+        var getCatDetail = function() {
+            alert('wowza your cat has an id of ' + this.id);
+        };
 
-           var catcards = document.querySelectorAll('.catcard');
-           console.log('cc ', catcards)
-
-            var getCatDetail = function() {
-                alert('wowza your cat has an id of ' + this.id);
-            };
-
-            for (var i = 0; i < catcards.length; i++) {
-                catcards[i].addEventListener('click', getCatDetail, false);
-            }
+        for (var i = 0; i < catcards.length; i++) {
+            catcards[i].addEventListener('click', getCatDetail, false);
+        }
 
        }
     </script>
