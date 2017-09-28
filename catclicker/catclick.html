@@ -5,29 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cat Clicker</title>
+    <style>
+        img {
+            max-width: 250px;
+            max-height: auto;
+        }
+        div {
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #e7e7e7;
+        }
+    </style>
 </head>
 <body>
     <h1>Cat Clicker</h1>
-        <div id="cat1">
-            <p>cat one</p>
+        <div id="cat1" class="catcard">
+            <!--<p>cat one</p>-->
+            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-03/3/16/enhanced/webdr10/enhanced-19898-1425418851-9.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="">
         </div>
-        <div id="cat2">
-            <p>cat two</p>
+        <div id="cat2" class="catcard">
+            <!--<p>cat two</p>-->
+            <img src="http://s2.quickmeme.com/img/80/80de521771e63376ac915c9a907b80c789c50c737b8d09d1362e3ca36189b202.jpg" alt="">
         </div>
 
     <script>
        window.onload = function(e) {
            var cat1 = document.getElementById('cat1');
            var cat2 = document.getElementById('cat2');
-           
-           cat1.addEventListener('click', function(){
-               console.log(e);
-               alert('cat 1 clicked : element id = ' + this.id);
-           });
-           cat2.addEventListener('click', function(){
-               console.log(e);
-               alert('cat 2 clicked : element id = ' + this.id);
-           });
+
+           var catcards = document.querySelectorAll('.catcard');
+           console.log('cc ', catcards)
+
+            var getCatDetail = function() {
+                alert('wowza your cat has an id of ' + this.id);
+            };
+
+            for (var i = 0; i < catcards.length; i++) {
+                catcards[i].addEventListener('click', getCatDetail, false);
+            }
+
        }
     </script>
 </body>
