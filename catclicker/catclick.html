@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Cat Clicker</title>
 </head>
 <body>
     <h1>Cat Clicker</h1>
-    <div id="cat1">
-        <p>cat one</p>
-
-    </div>
-
+        <div id="cat1">
+            <p>cat one</p>
+        </div>
+        <div id="cat2">
+            <p>cat two</p>
+        </div>
 
     <script>
        window.onload = function(e) {
            var cat1 = document.getElementById('cat1');
+           var cat2 = document.getElementById('cat2');
+           
            cat1.addEventListener('click', function(){
                console.log(e);
-               alert('cat one clicked');
+               alert('cat 1 clicked : element id = ' + this.id);
+           });
+           cat2.addEventListener('click', function(){
+               console.log(e);
+               alert('cat 2 clicked : element id = ' + this.id);
            });
        }
     </script>
