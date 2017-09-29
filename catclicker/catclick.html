@@ -6,39 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cat Clicker</title>
     <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
         img {
             max-width: 250px;
             max-height: auto;
         }
+        .row {
+            min-width: 100%;
+        }
+        #card-container {
+            border: 0px solid red;
+            min-width: 49%;
+            max-width:49%;
+            margin: auto;
+        }
+        #detail {
+            min-width: 49%;
+            max-width:49%;
+        }
         div {
             float: left;
-            padding: 5px;
-            margin: 5px;
-            border: 1px solid #e7e7e7;
         }
     </style>
 </head>
 <body>
     <h1>Cat Clicker</h1>
-        <div id="cat1" class="catcard">
-            <!--<p>cat one</p>-->
-            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-03/3/16/enhanced/webdr10/enhanced-19898-1425418851-9.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="">
+    
+    <div class="row">
+        <div id="card-container">
+            <!--<p style="display:none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error repudiandae deserunt ex amet voluptatum est aperiam sint ducimus consequuntur explicabo sit minima, molestiae, impedit commodi magni animi delectus id culpa!</p>-->
+            <div id="cat1" class="catcard">
+                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-03/3/16/enhanced/webdr10/enhanced-19898-1425418851-9.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="">
+            </div>
+            <div id="cat2" class="catcard">
+                <img src="http://s2.quickmeme.com/img/80/80de521771e63376ac915c9a907b80c789c50c737b8d09d1362e3ca36189b202.jpg" alt="">
+            </div>
         </div>
-        <div id="cat2" class="catcard">
-            <!--<p>cat two</p>-->
-            <img src="http://s2.quickmeme.com/img/80/80de521771e63376ac915c9a907b80c789c50c737b8d09d1362e3ca36189b202.jpg" alt="">
+        <div id="detail">
+            <p>No cat selected..</p>
+            <button id="clear-selection">Clear Selection</button>
         </div>
-
+    </div>
+        
     <script>
        window.onload = function(e) {
         var cat1 = document.getElementById('cat1');
         var cat2 = document.getElementById('cat2');
+        var detail = document.getElementById('detail').children[0];
+        var clearBtn = document.getElementById('clear-selection');
+        
+        var cats = [
+            { name: 'Fluffy' },
+            { name: 'Mesmer' }
+        ];
+
+        // Clearing function 
+        var clearSelection = function(){
+            detail.innerHTML = 'No cat selected...';
+        }
+        clearBtn.addEventListener('click', clearSelection, false);
+
         // Get ref to all elements with class
         var catcards = document.querySelectorAll('.catcard');
-        
+
         // Get cat details
         var getCatDetail = function() {
-            alert('wowza your cat has an id of ' + this.id);
+            var catDetail;
+            
+            if(this.id === 'cat1') {
+                catDetail = cats[0].name;
+                detail.innerHTML = catDetail;
+            } else if(this.id === 'cat2'){
+                catDetail = cats[1].name;
+                detail.innerHTML = catDetail;
+            }
         };
 
         for (var i = 0; i < catcards.length; i++) {
