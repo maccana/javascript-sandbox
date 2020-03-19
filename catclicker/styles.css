@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+img {
+  max-width: 250px;
+  max-height: auto;
+}
+.row {
+  min-width: 100%;
+}
+#card-container {
+  border: 0px solid red;
+  min-width: 49%;
+  max-width: 49%;
+  margin: auto;
+}
+#detail {
+  min-width: 49%;
+  max-width: 49%;
+}
+div {
+  float: left;
+}
