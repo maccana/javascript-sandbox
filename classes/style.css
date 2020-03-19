@@ -1,8 +1,38 @@
-body { background-color: rgba(255, 255, 255, 0.9); }
-.page-wrapper { width:70%; margin:60px auto; border: 0px solid red;}
-h1,h2 { color:#1ABC9C; font-family:'Raleway', sans-serif;}
-h3,h4,h5 { color: #7a7a7a; font-family: helvetica; font-weight: normal; }
-p { font-family: helvetica; }
-p{ font-size:16px;letter-spacing: .1px;color:#848282; }
-.page-header { border-bottom: 1px solid #666;}
-#page-title { text-align: center; text-transform: uppercase; font-size: 30px; font-weight: 300; }
+body {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.page-wrapper {
+  width: 80%;
+  margin: 60px auto;
+  border: 0px solid red;
+}
+h1,
+h2 {
+  color: #1abc9c;
+  font-family: "Raleway", sans-serif;
+}
+h3,
+h4,
+h5 {
+  color: #7a7a7a;
+  font-family: helvetica;
+  font-weight: normal;
+}
+p {
+  font-family: helvetica;
+}
+p {
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  color: #848282;
+}
+
+.page-heading {
+  margin-bottom: 60px;
+}
+#page-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 38px;
+  font-weight: 300;
+}

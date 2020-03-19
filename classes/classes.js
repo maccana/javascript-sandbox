@@ -22,13 +22,13 @@ var user1 = {
 
 // Reusable function to create a new User object
 function User(firstname, lastname, instrument, age) {
-  (this.firstname = firstname),
-    (this.lastname = lastname),
-    (this.instrument = instrument),
-    (this.age = age),
-    (this.getName = function() {
-      return firstname + " " + lastname;
-    });
+  this.firstname = firstname;
+  this.lastname = lastname;
+  this.instrument = instrument;
+  this.aga = age;
+  this.getName = function() {
+    return (firstname = " " + lastname);
+  };
 }
 
 // Create new object instances
@@ -38,7 +38,9 @@ var user3 = new User("Denis", " Wilson", "Keys", "57");
 // Output to DOM
 //alert(instance1.method1("Hello"));
 document.write(
-  "<p>exampleClass instance2 Property2 value = " +
+  "<p>exampleClass instance2" +
+    "<br/>" +
+    "Property2 value = " +
     instance2.property1 +
     "</p><hr />"
 );
