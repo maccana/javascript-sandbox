@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Find multiple occurences of word in a string</title>
-</head>
-<body>
-<script>
-var myString = "Welcome to Wrox books. " +
-               "The Wrox website is www.wrox.com. " +
-"Visit the Wrox website today. Thanks for buying Wrox";
+  </head>
+  <body>
+    <script>
+      var myString =
+        "Welcome to Wrox books. " +
+        "The Wrox website is www.wrox.com. " +
+        "Visit the Wrox website today. Thanks for buying Wrox!";
 
+      document.write(myString + "</br>");
+      // grabs first word of the string above and stores as new string
+      var firstWord = myString.substr(0, myString.indexOf(" "));
+      // var lastWord = myString.substr(0, myString.lastIndexOf(' '));
 
-// grabs first word of the string above and stores as new string
-var firstWord = myString.substr(0, myString.indexOf(' '));
-// var lastWord = myString.substr(0, myString.lastIndexOf(' '));
+      console.log("Hello " + firstWord);
 
-console.log("Hello " + firstWord);
+      var foundAtPosition = 0;
+      var wroxCount = 0;
+      var positions = [];
 
-var foundAtPosition = 0;
-var wroxCount = 0;
-var positions = [];
+      while (foundAtPosition != -1) {
+        if (foundAtPosition != 0) {
+          console.log("Wrox found at position " + foundAtPosition);
+          positions.push(foundAtPosition);
+        }
 
-while(foundAtPosition != -1) {
-	if(foundAtPosition != 0){
-		console.log("Wrox found at position "  + foundAtPosition);
-		positions.push(foundAtPosition);
-	}
+        foundAtPosition = myString.indexOf("Wrox", foundAtPosition);
 
-	foundAtPosition = myString.indexOf("Wrox", foundAtPosition);
-
-    if (foundAtPosition != -1) {
-        wroxCount++;
-        foundAtPosition++;
-    }
-}
-document.write("There are " + wroxCount + " occurrences of the word Wrox"+"</br>");
-document.write("Found at positions " + positions);
-
+        if (foundAtPosition != -1) {
+          wroxCount++;
+          foundAtPosition++;
+        }
+      }
+      document.write(
+        "There are " + wroxCount + " occurrences of the word Wrox" + "</br>"
+      );
+      document.write("Found at positions " + positions);
     </script>
-</body>
+  </body>
 </html>
