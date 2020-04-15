@@ -15,13 +15,16 @@
 	You may need to turn the string into an array before you can reverse it.
 	Your result must be a string.
 	*/
+	var myString = prompt("Type some text you would like to reverse");
+
 	function reverseString(str) {
-		console.log("Input string: ", str);		
+		console.log("Input string: ", str);
+		document.write("Input string: ", myString  + "</br>")
 		var str = str.split('').reverse().join(''); 
+		document.write("Reversed string: ", str)
 		return str;
 	}
-	console.log("Output string: ", reverseString('hello'));
-	
+	console.log("Output string: ", reverseString(myString));
 
 </script>	
 </html>
