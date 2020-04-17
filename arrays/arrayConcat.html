@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Concat Function</title>
+    <h1>
+      Joining arrays </h1>
+      <p>    Using   <pre>array.concat</pre> to join arrays. See console.</p>
+  </head>
+  <body>
+    <script>
+      function joinArrays() {
+        var arr1 = ["Cecilie", "Lone"];
+        var arr2 = ["Emil", "Tobias", "Linus"];
+        var arr3 = ["Robin"];
+
+        var newArray = arr1.concat(arr2.concat(arr3));
+        console.log(newArray);
+      }
+      joinArrays();
+    </script>
+  </body>
+</html>
