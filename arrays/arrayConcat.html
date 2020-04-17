@@ -4,21 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array Concat Function</title>
-    <h1>
-      Joining arrays </h1>
-      <p>    Using   <pre>array.concat</pre> to join arrays. See console.</p>
+    <ul id="list"></ul>
   </head>
   <body>
     <script>
-      function joinArrays() {
+      (function () {
+        // Arrays to join
         var arr1 = ["Cecilie", "Lone"];
         var arr2 = ["Emil", "Tobias", "Linus"];
         var arr3 = ["Robin"];
 
+        // Join with concat
         var newArray = arr1.concat(arr2.concat(arr3));
-        console.log(newArray);
-      }
-      joinArrays();
+
+        // Write array to page before list
+        document.write(newArray);
+
+        // Creat list of final array items and appead to ul
+        newArray.forEach((item) => {
+          console.log(item);
+          var ulEl = document.getElementById("list");
+          var listEl = document.createElement("li");
+          listEl.innerHTML = item.toString();
+          ulEl.appendChild(listEl);
+        });
+      })();
     </script>
   </body>
 </html>
