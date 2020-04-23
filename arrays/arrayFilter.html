@@ -75,6 +75,8 @@
       ];
 
       document.getElementById("type-submit").onclick = function () {
+        var resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = "";
         var type = document.getElementById("type-input").value;
         if (!type) {
           alert("Please enter a valid instrument type");
