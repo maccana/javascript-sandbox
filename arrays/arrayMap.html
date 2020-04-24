@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Examples of array.map method</p>
+    <input type="text" id="nbr" />
+    <button onclick="submit()">Submit</button>
+    <button onclick="multiply()">Multiply x 2</button>
+    <script>
+      let input = document.getElementById("nbr");
+
+      // Extract only numbers from the input
+      function extractNumsFromString() {
+        return input.value.match(/\d+/g).map(Number);
+      }
+
+      // Multiply numbers by 2 using map method
+      function multiply() {
+        // let nums = [2, 8, 10, 77];
+        let numbers = extractNumsFromString();
+        let multiplied = numbers.map((num) => num * 2);
+        console.log(multiplied);
+      }
+
+      function submit() {
+        // let input = document.getElementById("nbr");
+        let numbers = extractNumsFromString();
+        console.log(numbers);
+      }
+    </script>
+  </body>
+</html>
