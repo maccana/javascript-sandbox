@@ -15,18 +15,16 @@
 	</div>
 </body>
 <script>
-(function(){
-function greaterThan(n){
-	return function(x) { 
-		$("#test").append("Is ", x + " greater than " + n + "?<br>")
-		//document.write( );
-		return x > n; }
-}
-
-var greaterThan10 = greaterThan(10);
-		$(".container").append("Result: ", greaterThan10(11));
-	
-})();
+	(function(){
+		function greaterThan(n){
+			return function(x) { 
+				$("#test").append("Is ", x + " greater than " + n + "?<br>")
+				//document.write( );
+				return x > n; }
+		}
+		var greaterThan10 = greaterThan(10);
+				$(".container").append("Result: ", greaterThan10(11));	
+	})();
 </script>
 </html>
 
