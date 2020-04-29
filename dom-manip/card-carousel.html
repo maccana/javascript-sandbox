@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      /* .wrapper {
+        width: 40%;
+        height: 300px;
+        background-color: cadetblue;
+      }
+      .wider {
+        width: 100vw;
+        height: 280px;
+        background-color: chartreuse;
+      } */
+      #d1 {
+        background-color: chartreuse;
+      }
+      #d2 {
+        background-color: rgb(110, 33, 146);
+      }
+      #d3 {
+        background-color: rgb(230, 6, 92);
+      }
+      #d4 {
+        background-color: rgb(4, 105, 0);
+      }
+      #d5 {
+        background-color: rgb(252, 125, 173);
+      }
+      #d6 {
+        background-color: rgb(230, 6, 92);
+      }
+      #d7 {
+        background-color: rgb(247, 243, 8);
+      }
+      .day {
+        width: 200px;
+        height: 200px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <button onclick="previousCard()" id="prevBtn">prev</button>
+      <button onclick="nextCard()" id="nextBtn">next</button>
+
+      <div class="day active" id="d1">
+        <h1 style="color: white;">1</h1>
+      </div>
+      <div class="day hidden" id="d2">
+        <h1 style="color: white;">2</h1>
+      </div>
+      <div class="day hidden" id="d3">
+        <h1 style="color: white;">3</h1>
+      </div>
+      <div class="day hidden" id="d4">
+        <h1 style="color: white;">4</h1>
+      </div>
+      <div class="day hidden" id="d5">
+        <h1 style="color: white;">5</h1>
+      </div>
+      <div class="day hidden" id="d6">
+        <h1 style="color: white;">6</h1>
+      </div>
+      <div class="day hidden" id="d7">
+        <h1 style="color: white;">7</h1>
+      </div>
+    </div>
+
+    <script>
+      let days = ["d1", "d2", "d3", "d4", "d5", "d6", "d7"];
+      let idx = 0;
+      let prevIdx;
+      let nextBtn = document.getElementById("nextBtn");
+      let prevBtn = document.getElementById("prevBtn");
+
+      function disableBtn() {
+        console.log("dis ", days.length);
+        if (idx == days.length - 1) {
+          console.log("i = len : ", idx);
+          nextBtn.disabled = true;
+        } else {
+          nextBtn.disabled = false;
+        }
+
+        if (idx == 0) {
+          prevBtn.disabled = true;
+        } else {
+          prevBtn.disabled = false;
+        }
+      }
+
+      function changeCard() {
+        console.log("forward");
+        disableBtn();
+        // hide current day
+        let currDay = document.getElementById(days[prevIdx].toString());
+        console.log("cur ", currDay);
+        currDay.classList.remove("active");
+        currDay.classList.add("hidden");
+
+        console.log("new idx in change ", idx);
+
+        let newDay = document.getElementById(days[idx].toString());
+        console.log("new card ", newDay);
+        newDay.classList.remove("hidden");
+        newDay.classList.add("active");
+      }
+
+      function nextCard() {
+        prevIdx = idx;
+        idx++;
+        console.log("next idx ", idx);
+        changeCard();
+      }
+
+      function previousCard() {
+        prevIdx = idx;
+        console.log("prev idx in previous card ", prevIdx);
+        idx--;
+        console.log("idx val b4 change card ", idx);
+        changeCard();
+      }
+    </script>
+  </body>
+</html>
