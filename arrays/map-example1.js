@@ -4,9 +4,12 @@
 
 var items = ["item1", "item2", "item3"];
 
-var newItems = items.map(function(i) {
-  if(i == "item3") { return "item6"; }
-  else { return i; };
+var newItems = items.map(function (i) {
+  if (i == "item3") {
+    return "item6";
+  } else {
+    return i;
+  }
 });
 
 console.log(items);
