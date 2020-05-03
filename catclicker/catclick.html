@@ -8,14 +8,22 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Cat Clicker</h1>
-
+    <header>
+      <h1>Cat Clicker</h1>
+      <ul id="nav_menu">
+        <li>About</li>
+        <li>Cat Pics</li>
+        <li>Blog</li>
+        <li>Contact</li>
+        <li>Products</li>
+      </ul>
+    </header>
     <div class="row">
       <div id="card-container">
         <!--<p style="display:none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error repudiandae deserunt ex amet voluptatum est aperiam sint ducimus consequuntur explicabo sit minima, molestiae, impedit commodi magni animi delectus id culpa!</p>-->
         <div id="cat1" class="catcard">
           <img
-            src="https://img.buzzfeed.com/buzzfeed-static/static/2015-03/3/16/enhanced/webdr10/enhanced-19898-1425418851-9.jpg?downsize=715:*&output-format=auto&output-quality=auto"
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.cat-breeds-encyclopedia.com%2Fimages%2FChinchilla-thumbnail.jpg&f=1&nofb=1"
             alt=""
           />
         </div>
@@ -31,42 +39,6 @@
         <button id="clear-selection">Clear Selection</button>
       </div>
     </div>
-
-    <script>
-      window.onload = function(e) {
-        var cat1 = document.getElementById("cat1");
-        var cat2 = document.getElementById("cat2");
-        var detail = document.getElementById("detail").children[0];
-        var clearBtn = document.getElementById("clear-selection");
-
-        var cats = [{ name: "Fluffy" }, { name: "Mesmer" }];
-
-        // Clearing function
-        var clearSelection = function() {
-          detail.innerHTML = "No cat selected...";
-        };
-        clearBtn.addEventListener("click", clearSelection, false);
-
-        // Get ref to all elements with class
-        var catcards = document.querySelectorAll(".catcard");
-
-        // Get cat details
-        var getCatDetail = function() {
-          var catDetail;
-
-          if (this.id === "cat1") {
-            catDetail = cats[0].name;
-            detail.innerHTML = catDetail;
-          } else if (this.id === "cat2") {
-            catDetail = cats[1].name;
-            detail.innerHTML = catDetail;
-          }
-        };
-
-        for (var i = 0; i < catcards.length; i++) {
-          catcards[i].addEventListener("click", getCatDetail, false);
-        }
-      };
-    </script>
+    <script src="catclick.js"></script>
   </body>
 </html>

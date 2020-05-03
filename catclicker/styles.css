@@ -2,6 +2,20 @@ body {
   margin: 0;
   padding: 20px;
   overflow-x: hidden;
+  background-color: transparent;
+}
+header {
+  display: flex;
+  flex-direction: column;
+}
+#nav_menu {
+  display: flex;
+
+}
+.nave_menu>ul>li {
+  flex-direction: row;
+  text-decoration: none;
+  list-style-type: none;
 }
 img {
   max-width: 250px;
@@ -15,6 +29,9 @@ img {
   min-width: 49%;
   max-width: 49%;
   margin: auto;
+}
+.cat-card {
+  /* flex-direction: row; */
 }
 #detail {
   min-width: 49%;
