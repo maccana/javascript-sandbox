@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 - Destructuring</title>
+  </head>
+  <body>
+    <h1>ES6 Destructuring</h1>
+    <p>See console</p>
+    <script>
+      (function () {
+        const person1 = {
+          firstName: "joe",
+          lastName: "schmo",
+          age: 39,
+        };
+        const { firstName, age } = person1;
+
+        console.log("Name: " + firstName);
+        console.log("Age: " + age);
+      })();
+    </script>
+  </body>
+</html>
