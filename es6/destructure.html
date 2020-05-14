@@ -19,6 +19,15 @@
 
         console.log("Name: " + firstName);
         console.log("Age: " + age);
+
+        sayHi({
+          person: "jim",
+          greeting: "howdy!",
+        });
+
+        function sayHi({ person, greeting = "hi!" }) {
+          console.log(person + " says " + greeting);
+        }
       })();
     </script>
   </body>
