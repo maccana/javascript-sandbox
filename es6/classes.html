@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 Classes</title>
+  </head>
+  <body>
+    <h1>ES6 Classes</h1>
+    <p>See console</p>
+    <script>
+      (function () {
+        console.log("works");
+        class Person {
+          constructor(name, age) {
+            this.name = name;
+            this.age = age;
+          }
+        }
+
+        let p1 = new Person("Joe", 39);
+        console.log("Name: ", p1.name);
+        console.log("Age: ", p1.age);
+      })();
+    </script>
+  </body>
+</html>
