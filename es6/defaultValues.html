@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 Default Values</title>
+  </head>
+  <body>
+    <h1>ES6 Default Values</h1>
+    <p>For example output see console</p>
+
+    <script>
+      (function () {
+        function compareValues(num, compare = 5) {
+          return num == compare;
+        }
+        console.log(compareValues(10, 10)); //--> true
+        console.log(compareValues(10)); //--> false
+      })();
+    </script>
+  </body>
+</html>
