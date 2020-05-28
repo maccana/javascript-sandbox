@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Remove DOM nodes</title>
-	<script>
-		function test() {
-			//Nodelist
-			var list = document.getElementsByTagName('p');
-			var node = list.item(0);
-			node.parentNode.removeChild(node);
-		}
-	</script>
-</head>
-<body>
-	<p>Element One</p>
-	<p>Element Two</p>
-	<p>Element Three</p>
-	<p>Element Four</p>
-	<p>Element Five</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Remove DOM nodes</title>
 
-	<input type="Button" onclick="test()" value="Remove Element!">
-	
-</body>
+    <script>
+      var itemNum = 0;
+      var listCount = 0;
+      function test() {
+        itemNum++;
+        //Nodelist
+        var list = document.getElementsByTagName("li");
+        console.log("test" + list + " " + itemNum);
+
+        var node = list.item(0);
+        console.log("test" + list.length);
+
+        node.parentNode.removeChild(node);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Use the button to remove elements from the page one at a time.</p>
+    <input type="Button" onclick="test()" value="Remove Element!" />
+    <div>
+      <ul id="el-list">
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+        <li>Element 4</li>
+        <li>Element 5</li>
+      </ul>
+    </div>
+  </body>
 </html>
