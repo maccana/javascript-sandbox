@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Web Storage</title>
-	<meta charset=utf-8>
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-</head>
-<body>
-	<div id="wrapper">
-		<h2>Session Storage Test</h2>
-		<input type="type" id="text-input"><br><br>
-		<button id="store-button" onclick="storage()">Store input</button>
-		<br>
-		<p>Session storage status</p>
-		<div id="box"><span id="output">Please enter some text in the text field above..</span>&nbsp;</div><br>
-		<button id="deleteItem" onclick="deleteFromSessionStorage()">Remove Item</button>
-	</div>
-<script src="js/storage.js"></script>
-</body>
+  <head>
+    <title>Web Storage</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>Session Storage Test</h2>
+      <p>
+        Enter your name in the field below. Note that only one name can be
+        stored at once. Entering a new name value overwrites the previous name
+        value
+      </p>
+      <input type="type" id="text-input" /><br /><br />
+      <button id="store-button" onclick="storage()">Store input</button>
+      <br />
+      <p>Session storage status</p>
+      <div id="box">
+        <span id="output">Please enter some text in the text field above..</span
+        >&nbsp;
+      </div>
+      <br />
+      <button id="deleteItem" onclick="deleteFromSessionStorage()">
+        Remove Item
+      </button>
+    </div>
+    <script src="js/storage.js"></script>
+  </body>
 </html>
