@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Change Background Color with Color Picker</title>
+  </head>
+  <body id="page">
+    <p>Use the color picker to change the page background color.</p>
+    <input type="color" id="color" />
+    <input type="Button" onclick="reset()" value="Reset" />
+
+    <script>
+      var colorPicker = document.getElementById("color");
+      colorPicker.addEventListener("change", watchColorPicker, false);
+
+      // Quick and dirty page reset
+      function reset() {
+        window.location.reload();
+      }
+
+      function watchColorPicker(e) {
+        var page = document.getElementById("page");
+        page.style.backgroundColor = e.target.value;
+      }
+    </script>
+  </body>
+</html>
