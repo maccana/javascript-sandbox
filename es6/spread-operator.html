@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 Spread Operator</title>
+  </head>
+  <body>
+    <h1>ES6 Spread Operator</h1>
+    <script>
+      (function () {
+        let arr = ["a", "b", "c", "d", "e"];
+
+        function listArrItems() {
+          console.log("Array items ", ...arr);
+        }
+
+        listArrItems();
+      })();
+    </script>
+  </body>
+</html>
