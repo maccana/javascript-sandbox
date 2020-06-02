@@ -10,12 +10,17 @@
     <script>
       (function () {
         let arr = ["a", "b", "c", "d", "e"];
+        let nums = [19, 29, 44];
 
         function listArrItems() {
           console.log("Array items ", ...arr);
         }
+        function addNums(a, b, c) {
+          return a + b + c;
+        }
 
         listArrItems();
+        console.log("Result: ", addNums(...nums));
       })();
     </script>
   </body>
