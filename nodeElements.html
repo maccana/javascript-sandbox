@@ -3,10 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <title>Remove DOM nodes</title>
+  </head>
+  <body id="page">
+    <p>Use the button to remove elements from the page one at a time.</p>
+    <input type="Button" onclick="test()" value="Remove Element!" />
+    <input type="Button" onclick="reset()" value="Reset" />
+    <input type="color" id="color" />
+    <div>
+      <ul id="el-list">
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+        <li>Element 4</li>
+        <li>Element 5</li>
+      </ul>
+    </div>
 
     <script>
+      // Todo - move script to bottom and find more elegant way to reset list items than page reload
       var itemNum = 0;
       var listCount = 0;
+
+      // Quick and dirty page reset
+      function reset() {
+        window.location.reload();
+      }
+
       function test() {
         itemNum++;
         //Nodelist
@@ -18,19 +40,14 @@
 
         node.parentNode.removeChild(node);
       }
+
+      var colorPicker = document.getElementById("color");
+      colorPicker.addEventListener("change", watchColorPicker, false);
+
+      function watchColorPicker(e) {
+        var page = document.getElementById("page");
+        page.style.backgroundColor = e.target.value;
+      }
     </script>
-  </head>
-  <body>
-    <p>Use the button to remove elements from the page one at a time.</p>
-    <input type="Button" onclick="test()" value="Remove Element!" />
-    <div>
-      <ul id="el-list">
-        <li>Element 1</li>
-        <li>Element 2</li>
-        <li>Element 3</li>
-        <li>Element 4</li>
-        <li>Element 5</li>
-      </ul>
-    </div>
   </body>
 </html>
