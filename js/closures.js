@@ -53,4 +53,32 @@ console.log("Name changed: " + nameChange("Steve"));
 
 // add a counter here 
 // http://www.w3schools.com/js/js_function_closures.asp
+	
+// Decrement player credits 	
+// Refactor	
+const players = [
+  { name: 'Harry', creds: 3 },
+  { name: 'Audrey', creds: 4 },
+  { name: 'Lucy', creds: 2 }, 
+]
+let i 
+
+const fn = () => {
+  let plays = players[i].creds
+  // console.log(`${players[2].creds}`)
+  console.log('now ', i)
+  console.log(`${players[i].name}`);
+
+  return function spin() {
+    players[i].creds -= 1
+    if(players[i].creds == 0) { 
+      console.log(`${players[i].name} is out of credits.`);
+      return  
+    }
+    console.log(`${players[i].name} now has ${players[i].creds}`) 
+  }
+};
+i = 2
+const fun = fn()
+fun()
 
