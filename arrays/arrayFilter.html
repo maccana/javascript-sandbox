@@ -1,105 +1,121 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
-    <title>Using Array.filter method</title>
-    <style media="screen" type="text/css">
-      input {
-        width: 20%;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container">
-      <p>
-        Using the <b>array.filter</b> function to return a list of instruments
-        based on user input.
-      </p>
-      <p>
-        Instrument types: <i>stringed</i>, <i>brass</i>, <i>percussion</i>, or
-        <i>wind</i>
-      </p>
 
-      <input
-        id="type-input"
-        name="some_name"
-        placeholder="Search for instruments by type.."
-        type="text"
-        value=""
-      /><br />
-      <br />
-      <button id="type-submit" type="submit">Filter Instruments</button>
-      <div id="results"></div>
-    </div>
-    <script type="text/javascript">
-      // Instantiate numbers array
-      var arr = [1, 2, 3, 4, 5];
-      var odd = arr.filter(function (val) {
-        return 0 != val % 2;
-      });
-      // odd = [1, 3, 5]
-      var even = arr.filter(function (val) {
-        return 0 == val % 2;
-      });
-      // even = [2, 4]
-      console.log("Odd: " + odd);
-      console.log("Even: " + even);
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
+  <title>Using Array.filter method</title>
+  <style media="screen" type="text/css">
+    input {
+      width: 20%;
+    }
+  </style>
+</head>
 
-      // Filtering instrument object array by type
-      var instruments = [
-        {
-          name: "guitar",
-          type: "stringed",
-        },
-        {
-          name: "tambourine",
-          type: "percussion",
-        },
-        {
-          name: "violin",
-          type: "stringed",
-        },
-        {
-          name: "flute",
-          type: "wind",
-        },
-        {
-          name: "trumpet",
-          type: "brass",
-        },
-        {
-          name: "saxophone",
-          type: "brass",
-        },
-        {
-          name: "bongo",
-          type: "percussion",
-        },
-      ];
+<body>
+  <div id="container">
+    <p>
+      Using the <b>array.filter</b> function to return a list of instruments
+      based on user input.
+    </p>
+    <p>
+      Instrument types: <i>stringed</i>, <i>brass</i>, <i>percussion</i>, or
+      <i>wind</i>
+    </p>
 
-      document.getElementById("type-submit").onclick = function () {
-        var resultsDiv = document.getElementById("results");
-        resultsDiv.innerHTML = "";
-        var type = document.getElementById("type-input").value;
-        if (!type) {
-          alert("Please enter a valid instrument type");
+    <input id="type-input" name="some_name" placeholder="Search for instruments by type.." type="text" value="" /><br />
+    <br />
+    <button id="type-submit" type="submit">Filter Instruments</button>
+    <div id="results"></div>
+  </div>
+  <script type="text/javascript">
+
+    function oddOrEven(arr) {
+      let num = arr.map(function (val) {
+        if (0 != val % 2) {
+          return { num: val, type: 'odd' }
+
+        } else {
+          // val = 10
+          return { num: val, type: 'even' }
+          // console.log("even")
         }
-        // Save all brass to new array using higher order function filter
-        var selection = instruments.filter(function (inst) {
-          // Place whatever filtering is required here
-          return inst.type === type;
-        });
-        // Iterate the brass array and print details to console
-        var instrumentList = document.createElement("ul");
-        selection.forEach(function (inst) {
-          console.log("Instrument Name:", inst.name, " ", "Type:", inst.type);
-          var listItem = document.createElement("li");
-          listItem.innerHTML = inst.name;
-          instrumentList.appendChild(listItem);
-          var resultsDiv = document.getElementById("results");
-          resultsDiv.appendChild(instrumentList);
-        });
-      };
-    </script>
-  </body>
+      })
+      return num
+    }
+
+
+    var arr = [1, 2, 3, 4, 5];
+
+    console.log("func ...", oddOrEven(arr))
+
+
+    var odd = arr.filter(function (val) {
+      return 0 != val % 2; // Value does not divide equally 
+    });
+    // odd = [1, 3, 5]
+    var even = arr.filter(function (val) {
+      return 0 == val % 2; // Value divides equally
+    });
+    // even = [2, 4]
+    console.log("Odd: " + odd);
+    console.log("Even: " + even);
+
+    // Filtering instrument object array by type
+    var instruments = [
+      {
+        name: "guitar",
+        type: "stringed",
+      },
+      {
+        name: "tambourine",
+        type: "percussion",
+      },
+      {
+        name: "violin",
+        type: "stringed",
+      },
+      {
+        name: "flute",
+        type: "wind",
+      },
+      {
+        name: "trumpet",
+        type: "brass",
+      },
+      {
+        name: "saxophone",
+        type: "brass",
+      },
+      {
+        name: "bongo",
+        type: "percussion",
+      },
+    ];
+
+    document.getElementById("type-submit").onclick = function () {
+      var resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+      var type = document.getElementById("type-input").value;
+      if (!type) {
+        alert("Please enter a valid instrument type");
+      }
+      // Save all brass to new array using higher order function filter
+      var selection = instruments.filter(function (inst) {
+        // Place whatever filtering is required here
+        return inst.type === type;
+      });
+      // Iterate the brass array and print details to console
+      var instrumentList = document.createElement("ul");
+      selection.forEach(function (inst) {
+        console.log("Instrument Name:", inst.name, " ", "Type:", inst.type);
+        var listItem = document.createElement("li");
+        listItem.innerHTML = inst.name;
+        instrumentList.appendChild(listItem);
+        var resultsDiv = document.getElementById("results");
+        resultsDiv.appendChild(instrumentList);
+      });
+    };
+  </script>
+</body>
+
 </html>
