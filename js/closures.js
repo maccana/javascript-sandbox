@@ -11,7 +11,7 @@ const player = (name, credits) => {
 	}
 
 	function incrementScore() {
-		return credits -= 1
+		return credits += 1
 	}
 
 	function getPointsTotal() {
@@ -21,7 +21,8 @@ const player = (name, credits) => {
 	return {
 		playerStats,
 		decrementScore,
-		getPointsTotal
+		getPointsTotal,
+		incrementScore
 	}
 }
 
@@ -42,6 +43,13 @@ simon.decrementScore()
 // New scores 
 console.log('Simon points total ', simon.getPointsTotal())
 console.log('Suzy points total ', suzy.getPointsTotal())
+
+// Suzy wins a point 
+suzy.incrementScore()
+
+// New stats log
+console.log(suzy.playerStats())
+
 
 
 
