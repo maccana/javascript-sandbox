@@ -1,4 +1,4 @@
-(function() {
+(function () {
   if (typeof Storage !== "undefined") {
     // Code for localStorage/sessionStorage.
     console.log("Local Storage supported...");
@@ -7,14 +7,12 @@
     let cnt = 0;
     let notes = [];
     let timer;
-    notes.push("54");
-    notes.push("32");
-
     const fileExt = "pic.jpg";
 
-    let JSONreadyNotes = JSON.stringify(notes);
+    notes.push("First note..");
+    notes.push("New note...");
+    notes.push("Another...");
 
-    // Sort
     localStorage.setItem("lastname", "Smith");
     localStorage.setItem("notes", notes);
 
@@ -22,14 +20,15 @@
     document.getElementById("result").innerHTML = localStorage.getItem(
       "lastname"
     );
+    document.getElementById("notes").innerHTML = localStorage.getItem(
+      "notes"
+    );
 
     function startTimer() {
       console.log("timer started ");
-
       timer = setInterval(doSomething, 2000);
     }
 
-    // Called by setInterval
     function doSomething() {
       cnt += 1;
       const fileExtension = /\..*/;
