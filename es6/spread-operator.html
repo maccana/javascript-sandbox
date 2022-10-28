@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ES6 Spread Operator</title>
-  </head>
-  <body>
-    <h1>ES6 Spread Operator</h1>
-    <script>
-      (function () {
-        let arr = ["a", "b", "c", "d", "e"];
-        let nums = [19, 29, 44];
 
-        function listArrItems() {
-          console.log("Array items ", ...arr);
-        }
-        function addNums(a, b, c) {
-          return a + b + c;
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ES6 Spread Operator</title>
+</head>
 
-        listArrItems();
-        console.log("Result: ", addNums(...nums));
-      })();
-    </script>
-  </body>
+<body>
+  <h1>ES6 Spread Operator</h1>
+  <div id="content"></div>
+
+  <script>
+    (function () {
+      let arr = ["a", "b", "c", "d", "e"];
+      let nums = [19, 29, 44];
+      let moreStuff = ['micro', 'freak', 'arturia']
+      // Combine arrays with spread operator
+      let combined = [...arr, ...nums, ...moreStuff];
+
+      console.log("Joined arrays : ", combined);
+
+      function addContent() {
+        let data = combined.map((item) => {
+          return `<span> ${item} </span>`
+        })
+        return data
+      }
+
+      function appendToContent() {
+        let node = document.getElementById('content');
+        node.innerHTML = addContent();
+      }
+
+      function listArrItems() {
+        let node = document.getElementById('content');
+        node.innerHTML = appendToContent();
+      }
+
+      function addNums(a, b, c) {
+        return a + b + c;
+      }
+
+      listArrItems();
+      console.log("Result: ", addNums(...nums));
+      appendToContent();
+
+    })();
+  </script>
+</body>
+
 </html>

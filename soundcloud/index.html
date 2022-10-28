@@ -1,19 +1,42 @@
-<!DOCTYPE>
+<!DOCTYPE >
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Coding for GOOD - Soundcloud API</title>
-	<script src="http://connect.soundcloud.com/sdk.js"></script>
-	<script src="good.js"></script>
-</head>
-<body>
-	<ul>
-		<li><a href="#" class="genre">Dubstep</a></li>
-		<li><a href="#" class="genre">Electronic</a></li>
-		<li><a href="#" class="genre">Punk</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Coding for GOOD - Soundcloud API</title>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+    <script src="good.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#" class="genre">Dubstep</a></li>
+      <li><a href="#" class="genre">Electronic</a></li>
+      <li><a href="#" class="genre">Punk</a></li>
+    </ul>
+    <div id="target"></div>
 
-	</ul>
-	<div id="target"></div>
-	
-</body>
+    <!-- <div id="putTheWidgetHere"></div>
+    <script type="text/javascript">
+      SC.oEmbed("https://soundcloud.com/forss/sets/soulhack", {
+        element: document.getElementById("putTheWidgetHere")
+      });
+	</script> -->
+
+    <script>
+      (function() {
+        SC.initialize({
+          client_id: "4fee7a0f34bbc2b2e67ab7979f33b9aa",
+          redirect_uri: "localhost:8081"
+        });
+
+        // initiate auth popup
+        SC.connect()
+          .then(function() {
+            return SC.get("/me");
+          })
+          .then(function(me) {
+            alert("Hello, " + me.username);
+          });
+      })();
+    </script>
+  </body>
 </html>
